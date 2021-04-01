@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/main.css" />
+<noscript>
+	<link rel="stylesheet" href="assets/css/noscript.css" />
+</noscript>
+<title>Sign In</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body class="is-preload">
+	<br>
+	<br>
+	<div id="wrapper" class="container border border-light mx-auto">
+		<header th:fragment="header" class="text-center">
+			<h1>Log In</h1>
+		</header>
+		<!-- Main -->
+		<div id="main">
+
+			<form th:action="@{/home}" th:object="${hPage}"
+				method="post">
+
+				<div class="form-group">
+					<label for="username">Email</label> <input type="text"
+						class="form-control form-control-lg" id="username" name="username"
+						placeholder="Email" required />
+				</div>
+
+				<div class="form-group">
+					<label for="password">Password</label> <input type="password"
+						class="form-control form-control-lg" id="password" name="password"
+						placeholder="Password" required />
+				</div>
+				<div class="align-center btn-wrapper">
+					<button type="submit" class="btn">Log in</button>
+					<a class="btn signup" href="signup.html" th:href="@{/register}">Sign
+						up</a>
+				</div>
+				<p>
+				<div th:text="${message}" />
+				</p>
+			</form>
+		</div>
+	</div>
+</body>
+<style type="text/css">
+.btn-wrapper {
+	margin: 2%;
+}
+
+.btn-wrapper [type="submit"] {
+	display: inline;
+	margin: 0 2%;
+}
+
+a.signup {
+	height: 3.5em;
+	letter-spacing: 0.25em;
+	line-height: 2.5em;
+	text-transform: uppercase;
+	border: 2px solid #fff;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out,
+		border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.btn-wrapper .signup:hover {
+	border: 2px solid #9bf1ff;
+}
+</style>
+</html>

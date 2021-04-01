@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>Jobster</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/main.css" />
+<noscript>
+	<link rel="stylesheet" href="assets/css/noscript.css" />
+</noscript>
+<title>User Registration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body class="is-preload">
+	<br>
+	<br>
+	<div id="wrapper" class="container border border-dark mx-auto">
+		<header th:fragment="header" class="text-center">
+			<h1>User Registration</h1>
+		</header>
+
+		<div id="main">
+			<form th:action="@{/addUser}" th:object="${hPage}"
+				method="post">
+
+				<div class="form-group">
+					<label for="email">Email</label> <input type="text"
+						class="form-control form-control-lg" id="user" name="email"
+						placeholder="Email" th:field="${hPage.email}" required />
+				</div>
+
+				<div class="form-group">
+					<label for="password">Password</label> <input type="password"
+						class="form-control form-control-lg" id="password" name="password"
+						placeholder="Password" th:field="${hPage.password}" required />
+				</div>
+
+				<div class="form-group">
+					<label for="name">Name</label> <input type="text"
+						class="form-control form-control-lg" id="name" name="name"
+						placeholder="Name" th:field="${hPage.name}" required />
+				</div>
+
+				<div class="form-group">
+					<label for="phone">Phone</label> <input type="text"
+						class="form-control form-control-lg" id="phone" name="phone"
+						placeholder="Phone" th:field="${hPage.phone}" required>
+				</div>
+
+				<div class="align-center btn-wrapper">
+					<button type="submit" class="btn ">Sign Up</button>
+					<a class="btn" href="index.html" th:href="@{/}">Go Back to Home
+						Page</a>
+				</div>
+				<!-- 			<table>
+
+					<tr>
+						<td></td>
+						<td><input style="width: 130px; height: 40px" type="submit"
+							value="Regiser" /></td>
+
+
+					</tr>
+				</table> -->
+				<p>
+				<div th:text="${message}" />
+				</p>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
